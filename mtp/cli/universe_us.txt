@@ -1,0 +1,36 @@
+# Broad US universe (S&P 500 + Nasdaq 100 + liquid names).
+# Tickers are whitespace-separated; lines starting with # are ignored.
+# Used by: mtp-download --universe universe   (scripts/download_data.py)
+
+# Tech giants & semis
+AAPL MSFT NVDA AMZN GOOGL GOOG META TSLA AVGO AMD QCOM TXN INTC MU ADI
+LRCX AMAT KLAC MRVL NXPI ON MCHP SWKS QRVO MPWR TER ARM SMCI ASML TSM
+
+# Software & cloud
+CRM ORCL ADBE NOW INTU WDAY SNOW PLTR CRWD PANW FTNT DDOG ZS NET TEAM MDB CDNS SNPS
+
+# Internet & consumer tech
+NFLX UBER ABNB BKNG DASH SPOT PDD BABA JD ROKU COIN HOOD AFRM PYPL SHOP SE MELI CPNG BIDU
+
+# Industrials, machinery, aerospace & defence
+GE CAT DE HON UNP UPS FDX BA LMT RTX NOC GD ETN ITW EMR PH CMI PCAR ROK TT
+
+# Financials & payments
+JPM BAC WFC C GS MS BLK SCHW AXP V MA SPGI MCO CME ICE PNC USB TFC COF AIG MET PRU
+
+# Healthcare, pharma & medtech
+LLY UNH JNJ ABBV MRK PFE TMO ABT DHR BMY AMGN GILD ISRG REGN SYK BSX MDT BDX ZTS CI HUM
+ELV CVS MCK CAH COR IDXX DXCM BIIB MRNA
+
+# Energy, utilities & power
+XOM CVX COP SLB EOG MPC PSX VLO OXY KMI WMB HAL BKR NEE DUK SO AEP SRE D EXC CEG VST
+
+# Retail, restaurants & consumer
+WMT COST TGT HD LOW NKE SBUX MCD CMG YUM TJX ROST MAR HLT LVS WYNN PG KO PEP PM MO MDLZ
+CL KMB GIS EL STZ ADM TSN
+
+# Materials & industrial metals
+LIN SHW APD ECL FCX NEM SCCO NUE STLD DOW DD
+
+# Telecom & broadband
+VZ T TMUS CMCSA CHTR

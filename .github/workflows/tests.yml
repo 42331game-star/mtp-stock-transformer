@@ -1,0 +1,46 @@
+name: tests
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      # CPU-only torch keeps the runner image small and the install fast
+      - name: Install dependencies
+        run: |
+          pip install --index-url https://download.pytorch.org/whl/cpu torch
+          pip install -r requirements.txt
+
+      # validates pyproject.toml: metadata, dependencies and package data
+      - name: Install the package (editable)
+        run: pip install -e . --no-deps
+
+      # The suite is offline by design: synthetic OHLCV only, no yfinance calls
+      - name: Run tests
+        run: python -m pytest tests -q
+
+      - name: Import every CLI module
+        run: |
+          python -c "import mtp.cli.download_data, mtp.cli.train, mtp.cli.evaluate"
+          python -c "import mtp.cli.backtest, mtp.cli.predict"
+          python -c "import scripts.download_data, scripts.train, scripts.evaluate"
+          python -c "import scripts.backtest, scripts.predict"
+
+      # the installed console scripts must exist and reach argparse
+      - name: Check console scripts
+        run: |
+          mtp-download --help
+          mtp-train --help
+          mtp-evaluate --help
+          mtp-predict --help
+          mtp-backtest --help

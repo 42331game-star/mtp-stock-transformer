@@ -1,0 +1,29 @@
+# --- python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+.pytest_cache/
+
+# --- data & models (regenerate with mtp-download / mtp-train) ---
+data/
+checkpoints/
+*.pth
+*.pt
+*.parquet
+positions.json
+
+# --- outputs ---
+*.png
+!docs/**/*.png
+trades*.csv
+*_trades_history*.csv
+
+# --- editors / OS ---
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
